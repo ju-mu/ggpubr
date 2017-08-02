@@ -105,6 +105,7 @@ stat_compare_means <- function(mapping = NULL, data = NULL,
 
     pms <- list(...)
     size <- ifelse(is.null(pms$size), 0.3, pms$size)
+    textsize <- ifelse(is.null(pms$textsize), 3.88, pms$textsize)
     color <- ifelse(is.null(pms$color), "black", pms$color)
 
     map_signif_level <- FALSE
@@ -118,7 +119,7 @@ stat_compare_means <- function(mapping = NULL, data = NULL,
     step_increase <- ifelse(is.null(label.y), 0.12, 0)
     ggsignif::geom_signif(comparisons = comparisons, y_position = label.y,
                           test = method, test.args = test.args,
-                          step_increase = step_increase, size = size, color = color,
+                          step_increase = step_increase, size = size, textsize = textsize, color = color,
                           map_signif_level = map_signif_level)
   }
 
